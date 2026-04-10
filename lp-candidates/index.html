@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援LP - 候補一覧</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; background: #f5f5f5; padding: 40px 20px; }
+    h1 { text-align: center; font-size: 1.8rem; margin-bottom: 12px; }
+    .lead { text-align: center; color: #666; margin-bottom: 48px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+    .card-header {
+      padding: 28px 24px 20px;
+      color: #fff;
+    }
+    .card-header h2 { font-size: 1.2rem; margin-bottom: 4px; }
+    .card-header .num { font-size: .85rem; opacity: .8; }
+    .card-body { padding: 20px 24px 28px; }
+    .card-body .tag { display: inline-block; background: #eee; padding: 2px 10px; border-radius: 20px; font-size: .8rem; margin-bottom: 12px; color: #555; }
+    .card-body p { font-size: .93rem; color: #555; margin-bottom: 16px; }
+    .card-body ul { font-size: .88rem; color: #666; margin-bottom: 16px; padding-left: 20px; }
+    .card-body ul li { margin-bottom: 4px; }
+    .card-body a {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: .9rem;
+    }
+    .c1 .card-header { background: linear-gradient(135deg, #0d47a1, #42a5f5); }
+    .c1 a { background: #0d47a1; }
+    .c2 .card-header { background: linear-gradient(135deg, #1b5e20, #66bb6a); }
+    .c2 a { background: #1b5e20; }
+    .c3 .card-header { background: linear-gradient(135deg, #4a148c, #ab47bc); }
+    .c3 a { background: #4a148c; }
+    .c4 .card-header { background: linear-gradient(135deg, #bf360c, #ff7043); }
+    .c4 a { background: #bf360c; }
+    .c5 .card-header { background: linear-gradient(135deg, #263238, #546e7a); }
+    .c5 a { background: #263238; }
+  </style>
+</head>
+<body>
+
+<h1>薬局開業支援LP - 候補5案</h1>
+<p class="lead">各LPのコンセプト・ターゲット・訴求ポイントが異なります。クリックしてプレビューできます。</p>
+
+<div class="grid">
+
+  <div class="card c1">
+    <div class="card-header">
+      <div class="num">候補 1</div>
+      <h2>信頼・実績重視型</h2>
+    </div>
+    <div class="card-body">
+      <span class="tag">安心感を求める薬剤師向け</span>
+      <p>開業支援実績500件超の数字と、実際に開業した先生の声を全面に打ち出し、「ここに任せれば安心」と感じてもらうLP。</p>
+      <ul>
+        <li>実績数字（500件・満足度98%・15年）で権威づけ</li>
+        <li>お客様の声3名分で具体的な成功イメージ</li>
+        <li>支援の流れ7ステップで安心感を提供</li>
+      </ul>
+      <a href="01_trust-and-track-record.html">プレビューを見る</a>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <div class="card-header">
+      <div class="num">候補 2</div>
+      <h2>ワンストップサポート型</h2>
+    </div>
+    <div class="card-body">
+      <span class="tag">手間を省きたい薬剤師向け</span>
+      <p>「やることが多すぎる」という開業準備の悩みに寄り添い、すべてを一括でサポートする体制を訴求するLP。</p>
+      <ul>
+        <li>3つのペインポイントで共感を獲得</li>
+        <li>6つの専門領域をワンストップで対応</li>
+        <li>6ヶ月タイムラインで開業までを可視化</li>
+      </ul>
+      <a href="02_one-stop-support.html">プレビューを見る</a>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <div class="card-header">
+      <div class="num">候補 3</div>
+      <h2>コスト・収益シミュレーション型</h2>
+    </div>
+    <div class="card-body">
+      <span class="tag">資金面が不安な薬剤師向け</span>
+      <p>「結局いくらかかる？」というお金の疑問に正面から答え、費用と収益の見える化で行動を促すLP。</p>
+      <ul>
+        <li>開業費用の内訳を具体的な金額で提示</li>
+        <li>処方箋枚数別の3段階収益モデル</li>
+        <li>融資・補助金の活用方法を明示</li>
+      </ul>
+      <a href="03_cost-and-revenue.html">プレビューを見る</a>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <div class="card-header">
+      <div class="num">候補 4</div>
+      <h2>地域密着・立地分析型</h2>
+    </div>
+    <div class="card-body">
+      <span class="tag">立地選びに悩む薬剤師向け</span>
+      <p>「薬局の成功は立地で決まる」をテーマに、データ分析による最適立地の提案力を訴求するLP。</p>
+      <ul>
+        <li>「73%が立地を後悔」という衝撃データ</li>
+        <li>6つの分析項目で専門性をアピール</li>
+        <li>成功事例2件でデータ活用の効果を実証</li>
+      </ul>
+      <a href="04_location-analysis.html">プレビューを見る</a>
+    </div>
+  </div>
+
+  <div class="card c5">
+    <div class="card-header">
+      <div class="num">候補 5</div>
+      <h2>薬剤師の夢実現・感情訴求型</h2>
+    </div>
+    <div class="card-body">
+      <span class="tag">独立を夢見る薬剤師向け</span>
+      <p>「雇われ薬剤師から、自分の薬局を持つ薬剤師へ」——感情に訴えかけ、独立への第一歩を後押しするLP。</p>
+      <ul>
+        <li>共感ストーリーで潜在的な願望を刺激</li>
+        <li>Before/After形式のインタビューで変化を可視化</li>
+        <li>理想のライフスタイル提案でモチベーション喚起</li>
+      </ul>
+      <a href="05_dream-realization.html">プレビューを見る</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

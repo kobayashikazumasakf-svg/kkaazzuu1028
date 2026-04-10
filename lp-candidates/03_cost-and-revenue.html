@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援 | 開業費用と収益を見える化</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 50%, #ab47bc 100%);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+    .hero .subtitle { font-size: 1.15rem; max-width: 660px; margin: 0 auto 32px; opacity: .9; }
+    .cta-btn {
+      display: inline-block;
+      background: #ff6f00;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+    section { padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 16px; color: #4a148c; }
+    .section-sub { text-align: center; font-size: 1rem; color: #666; margin-bottom: 48px; }
+
+    /* ---------- Cost Table ---------- */
+    .cost-section { background: #faf5ff; }
+    .cost-table {
+      max-width: 760px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .cost-table th, .cost-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e0d4f0;
+      text-align: left;
+    }
+    .cost-table th { background: #4a148c; color: #fff; }
+    .cost-table tr:nth-child(even) { background: #f3e5f5; }
+    .cost-table .total { font-weight: bold; color: #4a148c; font-size: 1.1rem; }
+
+    /* ---------- Revenue Simulation ---------- */
+    .revenue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .revenue-card {
+      background: #fff;
+      border: 2px solid #ce93d8;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    .revenue-card.highlight { border-color: #4a148c; background: #f3e5f5; }
+    .revenue-card h3 { color: #4a148c; font-size: 1.2rem; margin-bottom: 12px; }
+    .revenue-card .amount { font-size: 2.4rem; font-weight: bold; color: #4a148c; }
+    .revenue-card .unit { font-size: .9rem; color: #777; }
+    .revenue-card .detail { margin-top: 12px; font-size: .9rem; color: #555; text-align: left; }
+    .revenue-card .detail li { margin-bottom: 4px; }
+
+    /* ---------- Comparison ---------- */
+    .compare { background: #faf5ff; }
+    .compare-table {
+      max-width: 760px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .compare-table th, .compare-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e0d4f0;
+      text-align: center;
+    }
+    .compare-table th { background: #4a148c; color: #fff; }
+    .compare-table .yes { color: #2e7d32; font-weight: bold; }
+    .compare-table .no { color: #c62828; }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+      background: #4a148c;
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .cta-section h2 { font-size: 1.6rem; margin-bottom: 24px; }
+
+    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <h1>薬局開業、結局いくらかかる？<br>費用と収益を"見える化"します。</h1>
+  <p class="subtitle">開業に必要な資金・ランニングコスト・収益シミュレーションを、あなたの条件で無料診断。「お金の不安」を解消してから、開業を始めませんか。</p>
+  <a href="#contact" class="cta-btn">無料で収益シミュレーションを受ける</a>
+</section>
+
+<!-- ===== 開業費用の目安 ===== -->
+<section class="cost-section">
+  <h2 class="section-title">薬局開業にかかる費用の目安</h2>
+  <p class="section-sub">一般的な調剤薬局（20坪規模）の場合</p>
+  <table class="cost-table">
+    <thead>
+      <tr><th>項目</th><th>費用目安</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>物件取得費（敷金・礼金・保証金）</td><td>200〜400万円</td></tr>
+      <tr><td>内装工事費</td><td>500〜800万円</td></tr>
+      <tr><td>調剤機器・設備費</td><td>300〜500万円</td></tr>
+      <tr><td>レセコン・電子薬歴</td><td>100〜200万円</td></tr>
+      <tr><td>初回医薬品仕入れ</td><td>300〜500万円</td></tr>
+      <tr><td>運転資金（3ヶ月分）</td><td>300〜500万円</td></tr>
+      <tr class="total"><td>合計</td><td>1,700〜2,900万円</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== 収益シミュレーション ===== -->
+<section>
+  <h2 class="section-title">収益シミュレーション</h2>
+  <p class="section-sub">処方箋枚数別の月間収益モデル</p>
+  <div class="revenue-grid">
+    <div class="revenue-card">
+      <h3>スモールスタート</h3>
+      <div class="amount">80<span class="unit">万円/月</span></div>
+      <ul class="detail">
+        <li>処方箋枚数: 40枚/日</li>
+        <li>技術料単価: 約1,100円</li>
+        <li>月間売上: 約350万円</li>
+        <li>経費: 約270万円</li>
+      </ul>
+    </div>
+    <div class="revenue-card highlight">
+      <h3>スタンダード</h3>
+      <div class="amount">180<span class="unit">万円/月</span></div>
+      <ul class="detail">
+        <li>処方箋枚数: 70枚/日</li>
+        <li>技術料単価: 約1,100円</li>
+        <li>月間売上: 約580万円</li>
+        <li>経費: 約400万円</li>
+      </ul>
+    </div>
+    <div class="revenue-card">
+      <h3>ハイボリューム</h3>
+      <div class="amount">350<span class="unit">万円/月</span></div>
+      <ul class="detail">
+        <li>処方箋枚数: 120枚/日</li>
+        <li>技術料単価: 約1,100円</li>
+        <li>月間売上: 約950万円</li>
+        <li>経費: 約600万円</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 融資サポート ===== -->
+<section class="cost-section">
+  <h2 class="section-title">自己資金が少なくても大丈夫</h2>
+  <p class="section-sub">融資・補助金の活用で、自己資金300万円からの開業実績あり</p>
+  <div class="revenue-grid">
+    <div class="revenue-card">
+      <h3>日本政策金融公庫</h3>
+      <p class="detail" style="margin-top:0;">新規開業資金として最大7,200万円の融資。当社が事業計画書の作成から面談対策までサポートし、融資承認率95%を実現。</p>
+    </div>
+    <div class="revenue-card">
+      <h3>各種補助金・助成金</h3>
+      <p class="detail" style="margin-top:0;">IT導入補助金、小規模事業者持続化補助金など、活用可能な制度を調査し、申請を代行。平均200万円の補助金獲得実績。</p>
+    </div>
+    <div class="revenue-card">
+      <h3>リース・割賦</h3>
+      <p class="detail" style="margin-top:0;">調剤機器・レセコンはリース契約も可能。初期費用を抑えてキャッシュフローを最適化するプランをご提案。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <h2>あなたの条件で、リアルな収益をシミュレーション。<br>まずは無料診断からスタート。</h2>
+  <a href="#" class="cta-btn">無料シミュレーションを申し込む</a>
+</section>
+
+<footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援 | 信頼と実績で選ばれるパートナー</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
+    img { max-width: 100%; height: auto; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+    .hero p { font-size: 1.15rem; max-width: 640px; margin: 0 auto 32px; opacity: .9; }
+    .hero .cta {
+      display: inline-block;
+      background: #ff6f00;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+    /* ---------- Section Common ---------- */
+    section { padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 48px; color: #0d47a1; }
+
+    /* ---------- Numbers ---------- */
+    .numbers {
+      background: #f5f8fc;
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .numbers-grid .num { font-size: 3rem; font-weight: bold; color: #0d47a1; }
+    .numbers-grid .label { font-size: .95rem; color: #555; }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .testimonial-card .name { font-weight: bold; margin-bottom: 8px; color: #0d47a1; }
+    .testimonial-card .quote { font-size: .95rem; color: #555; }
+
+    /* ---------- Flow ---------- */
+    .flow-list {
+      max-width: 700px;
+      margin: 0 auto;
+      list-style: none;
+      counter-reset: flow;
+    }
+    .flow-list li {
+      counter-increment: flow;
+      position: relative;
+      padding: 24px 24px 24px 72px;
+      margin-bottom: 16px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    .flow-list li::before {
+      content: counter(flow);
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: #0d47a1;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* ---------- CTA Bottom ---------- */
+    .cta-section {
+      background: #0d47a1;
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .cta-section h2 { font-size: 1.6rem; margin-bottom: 24px; }
+    .cta-section .cta {
+      display: inline-block;
+      background: #ff6f00;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <h1>開業実績500件超。<br>薬局開業は、信頼のプロに任せる。</h1>
+  <p>15年以上の支援実績と専門チームが、あなたの薬局開業を成功へ導きます。初めての開業でも安心のサポート体制。</p>
+  <a href="#contact" class="cta">無料相談を予約する</a>
+</section>
+
+<!-- ===== 実績数字 ===== -->
+<section class="numbers">
+  <h2 class="section-title">選ばれ続ける理由</h2>
+  <div class="numbers-grid">
+    <div><div class="num">500+</div><div class="label">開業支援実績</div></div>
+    <div><div class="num">98%</div><div class="label">顧客満足度</div></div>
+    <div><div class="num">15年</div><div class="label">業界経験</div></div>
+    <div><div class="num">50名</div><div class="label">専門スタッフ</div></div>
+  </div>
+</section>
+
+<!-- ===== お客様の声 ===== -->
+<section class="testimonials">
+  <h2 class="section-title">開業された先生方の声</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="name">A薬局 山田先生（東京都）</p>
+      <p class="quote">「右も左もわからない状態でしたが、物件選びから開局届の提出まで、すべてを丁寧にサポートしていただきました。今では月商800万円を安定して達成しています。」</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="name">B薬局 佐藤先生（大阪府）</p>
+      <p class="quote">「他社と比較して、圧倒的に提案の質が高かった。立地分析のデータに基づいたアドバイスのおかげで、開業初月から黒字化できました。」</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="name">C薬局 田中先生（福岡県）</p>
+      <p class="quote">「開業後のフォローが手厚く、経営面での相談にも乗ってくれます。一人で悩まなくていいという安心感は何物にも代えがたいです。」</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ご支援の流れ ===== -->
+<section style="background: #f5f8fc;">
+  <h2 class="section-title">ご支援の流れ</h2>
+  <ol class="flow-list">
+    <li>無料相談・ヒアリング</li>
+    <li>市場調査・立地分析</li>
+    <li>事業計画書の作成支援</li>
+    <li>資金調達・融資サポート</li>
+    <li>内装設計・設備導入</li>
+    <li>開局届・許認可申請</li>
+    <li>グランドオープン・運営フォロー</li>
+  </ol>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <h2>まずは無料相談から。<br>あなたの理想の薬局づくりを一緒に始めましょう。</h2>
+  <a href="#" class="cta">無料相談に申し込む</a>
+</section>
+
+<footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
+
+</body>
+</html>

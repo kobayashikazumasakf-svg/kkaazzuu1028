@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援 | データで導く、最適な立地選び</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #bf360c 0%, #e64a19 50%, #ff7043 100%);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+    .hero .subtitle { font-size: 1.15rem; max-width: 660px; margin: 0 auto 32px; opacity: .9; }
+    .cta-btn {
+      display: inline-block;
+      background: #1565c0;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+    section { padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 16px; color: #bf360c; }
+    .section-sub { text-align: center; font-size: 1rem; color: #666; margin-bottom: 48px; }
+
+    /* ---------- Problem ---------- */
+    .problem { background: #fff3e0; }
+    .problem-content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .problem-content .stat {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #bf360c;
+      margin-bottom: 8px;
+    }
+    .problem-content .stat-label { font-size: 1.1rem; color: #555; margin-bottom: 24px; }
+    .problem-content p { font-size: 1rem; color: #555; }
+
+    /* ---------- Data Points ---------- */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .data-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      border-top: 4px solid #e64a19;
+    }
+    .data-card h3 { color: #bf360c; margin-bottom: 12px; font-size: 1.15rem; }
+    .data-card p { font-size: .95rem; color: #555; }
+
+    /* ---------- Process ---------- */
+    .process { background: #fbe9e7; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .step {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .step .num {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: #bf360c;
+      color: #fff;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .step h3 { font-size: 1rem; color: #333; margin-bottom: 8px; }
+    .step p { font-size: .85rem; color: #666; }
+
+    /* ---------- Case Study ---------- */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .case-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .case-card h3 { color: #bf360c; margin-bottom: 12px; }
+    .case-card .result { font-size: 1.6rem; font-weight: bold; color: #2e7d32; margin: 12px 0; }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+      background: #bf360c;
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .cta-section h2 { font-size: 1.6rem; margin-bottom: 24px; }
+
+    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <h1>薬局の成功は「立地」で決まる。<br>データ分析で、最適な場所を見つけます。</h1>
+  <p class="subtitle">独自の商圏分析システムで、処方箋需要・競合状況・人口動態を徹底調査。勘や経験だけに頼らない、データドリブンな立地選定を。</p>
+  <a href="#contact" class="cta-btn">無料で商圏レポートをもらう</a>
+</section>
+
+<!-- ===== Problem ===== -->
+<section class="problem">
+  <h2 class="section-title">立地選びの失敗は取り返せない</h2>
+  <div class="problem-content">
+    <div class="stat">73%</div>
+    <p class="stat-label">開業後に「立地選びを失敗した」と感じる薬局オーナーの割合</p>
+    <p>薬局経営において、立地は売上の70%以上を左右するとされています。<br>物件を契約した後では変更が困難。だからこそ、開業前のデータ分析が重要です。</p>
+  </div>
+</section>
+
+<!-- ===== 分析項目 ===== -->
+<section>
+  <h2 class="section-title">独自の商圏分析で見える6つのデータ</h2>
+  <p class="section-sub">500m〜3km圏内を多角的に分析し、レポートでお届け</p>
+  <div class="data-grid">
+    <div class="data-card">
+      <h3>周辺医療機関マッピング</h3>
+      <p>半径3km以内の病院・クリニックの診療科目・患者数を網羅的に調査。処方箋の流入元を可視化します。</p>
+    </div>
+    <div class="data-card">
+      <h3>競合薬局分析</h3>
+      <p>周辺薬局の処方箋枚数・営業時間・特徴を調査。差別化ポイントを明確にします。</p>
+    </div>
+    <div class="data-card">
+      <h3>人口動態・世帯構成</h3>
+      <p>高齢者比率・世帯数の推移・将来予測を分析。長期的な需要を見極めます。</p>
+    </div>
+    <div class="data-card">
+      <h3>交通量・動線分析</h3>
+      <p>車・歩行者の通行量、駐車場の有無、公共交通機関のアクセスを調査。来局しやすさを評価します。</p>
+    </div>
+    <div class="data-card">
+      <h3>処方箋需要予測</h3>
+      <p>医療機関の患者数・処方パターンから、月間処方箋枚数をAIで予測。収益シミュレーションに活用します。</p>
+    </div>
+    <div class="data-card">
+      <h3>地域開発計画</h3>
+      <p>再開発・新規医療施設の建設計画を調査。5年後・10年後の商圏変化も見据えた判断をサポートします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="process">
+  <h2 class="section-title">商圏分析の流れ</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>ご希望エリアの<br>ヒアリング</h3>
+      <p>開業希望地域・条件をお伺いします。</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>データ収集・<br>現地調査</h3>
+      <p>統計データと実地調査の両面でリサーチ。</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>商圏レポート<br>作成</h3>
+      <p>30ページ超の詳細レポートをお届け。</p>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <h3>最適物件の<br>ご提案</h3>
+      <p>データに基づく候補物件をご紹介。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Case Study ===== -->
+<section>
+  <h2 class="section-title">立地分析で成功した事例</h2>
+  <div class="case-grid">
+    <div class="case-card">
+      <h3>ケース1：駅前 vs 住宅街の選択</h3>
+      <p>当初は駅前物件を希望していたA先生。商圏分析の結果、徒歩10分の住宅街エリアに高齢者が集中していることが判明。</p>
+      <div class="result">開業初年度 月商650万円</div>
+      <p>駅前の想定月商400万円を大幅に上回る結果に。</p>
+    </div>
+    <div class="case-card">
+      <h3>ケース2：新規クリニック隣接の先読み</h3>
+      <p>開発計画の調査により、半年後に内科・整形外科の開業が予定されていたエリアを発見。先行して薬局を開設。</p>
+      <div class="result">2年目で処方箋 100枚/日 達成</div>
+      <p>クリニック開業後、処方箋が急増。先行者メリットを最大化。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <h2>あなたの希望エリアの商圏レポートを<br>無料でお作りします。</h2>
+  <a href="#" class="cta-btn">無料商圏レポートを申し込む</a>
+</section>
+
+<footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
+
+</body>
+</html>

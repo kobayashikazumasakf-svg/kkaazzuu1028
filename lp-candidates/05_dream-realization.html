@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援 | あなたの理想の薬局を、現実に。</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #263238 0%, #37474f 40%, #546e7a 100%);
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px 100px;
+    }
+    .hero .tagline {
+      font-size: 1rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .7;
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: 2.6rem; margin-bottom: 20px; font-weight: 300; }
+    .hero h1 strong { font-weight: 700; }
+    .hero .subtitle { font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; opacity: .85; }
+    .cta-btn {
+      display: inline-block;
+      background: #e65100;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+    .cta-btn.secondary {
+      background: transparent;
+      border: 2px solid #fff;
+      margin-left: 16px;
+    }
+
+    section { padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 16px; color: #263238; }
+    .section-sub { text-align: center; font-size: 1rem; color: #777; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    /* ---------- Story ---------- */
+    .story { background: #fafafa; }
+    .story-content {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: #444;
+    }
+    .story-content p { margin-bottom: 20px; }
+    .story-content .highlight {
+      background: linear-gradient(transparent 60%, #ffe082 60%);
+      font-weight: bold;
+    }
+
+    /* ---------- Vision Cards ---------- */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .vision-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      text-align: center;
+      transition: transform .2s;
+    }
+    .vision-card:hover { transform: translateY(-4px); }
+    .vision-card .icon { font-size: 3rem; margin-bottom: 16px; }
+    .vision-card h3 { font-size: 1.15rem; color: #263238; margin-bottom: 12px; }
+    .vision-card p { font-size: .93rem; color: #666; }
+
+    /* ---------- Interview ---------- */
+    .interview { background: #eceff1; }
+    .interview-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .interview-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .interview-card .profile { font-weight: bold; color: #263238; margin-bottom: 8px; }
+    .interview-card .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .interview-card .before, .interview-card .after {
+      padding: 12px;
+      border-radius: 8px;
+      font-size: .9rem;
+    }
+    .interview-card .before { background: #ffebee; color: #c62828; }
+    .interview-card .after { background: #e8f5e9; color: #2e7d32; }
+    .interview-card .before strong, .interview-card .after strong { display: block; margin-bottom: 4px; }
+    .interview-card .message { font-size: .95rem; color: #555; font-style: italic; }
+
+    /* ---------- Values ---------- */
+    .values { background: #fafafa; }
+    .values-list {
+      max-width: 700px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .values-list li {
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 4px solid #e65100;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .values-list li strong { color: #263238; }
+
+    /* ---------- CTA ---------- */
+    .cta-section {
+      background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta-section h2 { font-size: 1.8rem; margin-bottom: 16px; font-weight: 300; }
+    .cta-section h2 strong { font-weight: 700; }
+    .cta-section p { opacity: .85; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <p class="tagline">Pharmacy Startup Support</p>
+  <h1>雇われ薬剤師から、<br><strong>自分の薬局を持つ薬剤師</strong>へ。</h1>
+  <p class="subtitle">「いつか自分の薬局を開きたい」——その想いを、私たちが現実に変えます。あなたの理想の薬局像を一緒にカタチにしましょう。</p>
+  <a href="#contact" class="cta-btn">夢を相談する（無料）</a>
+  <a href="#stories" class="cta-btn secondary">先輩の体験談を読む</a>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="story">
+  <h2 class="section-title">あなたも、こんなこと思っていませんか？</h2>
+  <div class="story-content">
+    <p>毎日、同じ処方箋をさばいて、同じルーティンの繰り返し。「薬剤師としてもっとやれることがあるはずなのに」——そんな想いが、ふとした瞬間に頭をよぎる。</p>
+    <p>患者さん一人ひとりと、もっとじっくり向き合いたい。<br>在宅医療にもっと力を入れたい。<br>地域の健康ステーションとして頼られる存在になりたい。</p>
+    <p>でも、今の環境では<span class="highlight">自分の理想を追求するには限界がある</span>。</p>
+    <p>そう感じているなら——<br>あなたはもう、<span class="highlight">自分の薬局を持つ準備ができている</span>のかもしれません。</p>
+  </div>
+</section>
+
+<!-- ===== Vision ===== -->
+<section>
+  <h2 class="section-title">自分の薬局を持つということ</h2>
+  <p class="section-sub">独立開業で手に入る、薬剤師としての新しいライフスタイル</p>
+  <div class="vision-grid">
+    <div class="vision-card">
+      <div class="icon">&#x2728;</div>
+      <h3>理想の医療を追求できる</h3>
+      <p>かかりつけ薬局・在宅医療・OTC強化——あなたが信じる医療を自分の判断で実践。</p>
+    </div>
+    <div class="vision-card">
+      <div class="icon">&#x23F0;</div>
+      <h3>時間の自由が生まれる</h3>
+      <p>営業時間・休日を自分で設計。家族との時間も大切にできる働き方を。</p>
+    </div>
+    <div class="vision-card">
+      <div class="icon">&#x1F4B8;</div>
+      <h3>収入の上限がなくなる</h3>
+      <p>勤務薬剤師の平均年収580万円 → オーナー薬剤師は1,000万円超も現実的。</p>
+    </div>
+    <div class="vision-card">
+      <div class="icon">&#x1F3E0;</div>
+      <h3>地域に根ざした存在になる</h3>
+      <p>「あの薬局があってよかった」と言ってもらえる、地域のかけがえのない存在に。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Interview ===== -->
+<section class="interview" id="stories">
+  <h2 class="section-title">夢を実現した先輩たちの声</h2>
+  <div class="interview-cards">
+    <div class="interview-card">
+      <p class="profile">鈴木先生（38歳・神奈川県）開業2年目</p>
+      <div class="before-after">
+        <div class="before"><strong>Before</strong>年収520万円 / 残業月40h / 裁量なし</div>
+        <div class="after"><strong>After</strong>年収920万円 / 週休2.5日 / 在宅医療に注力</div>
+      </div>
+      <p class="message">「在宅医療をやりたくて独立しました。今は週3日在宅訪問に出て、患者さんに"先生が来てくれて安心"と言われる毎日。収入も上がり、家族との時間も増えました。」</p>
+    </div>
+    <div class="interview-card">
+      <p class="profile">小林先生（42歳・埼玉県）開業3年目</p>
+      <div class="before-after">
+        <div class="before"><strong>Before</strong>年収600万円 / チェーン薬局の店長 / 異動の不安</div>
+        <div class="after"><strong>After</strong>年収1,100万円 / 2店舗経営 / 地域医療の中核に</div>
+      </div>
+      <p class="message">「50歳を目前にして"このままでいいのか"と自問した結果の独立でした。開業コンサルの方と一緒に事業計画を練り上げ、2店舗目も軌道に乗っています。」</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 私たちの信念 ===== -->
+<section class="values">
+  <h2 class="section-title">私たちが大切にしていること</h2>
+  <ul class="values-list">
+    <li><strong>数字だけでなく、想いを聞くこと。</strong>あなたが「どんな薬局をつくりたいか」から逆算して計画を立てます。</li>
+    <li><strong>不安を、一つずつ潰すこと。</strong>お金・立地・経営……一人で抱えるすべての不安を一緒に解消します。</li>
+    <li><strong>開業がゴールではないこと。</strong>開業後も伴走し、あなたの薬局が地域に愛される存在になるまで支えます。</li>
+  </ul>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <h2>「いつか」を<strong>「今」</strong>に変える<br>最初の一歩を、ここから。</h2>
+  <p>まだ漠然とした構想段階でも大丈夫。あなたの想いをお聞かせください。一緒に、理想の薬局の姿を描きましょう。</p>
+  <a href="#" class="cta-btn">無料相談に申し込む</a>
+</section>
+
+<footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
+
+</body>
+</html>

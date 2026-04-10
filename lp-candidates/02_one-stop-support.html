@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薬局開業支援 | 企画から開局まで、すべてお任せ</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #1b5e20 0%, #388e3c 50%, #66bb6a 100%);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+    .hero .subtitle { font-size: 1.15rem; max-width: 640px; margin: 0 auto 32px; opacity: .9; }
+    .cta-btn {
+      display: inline-block;
+      background: #ff8f00;
+      color: #fff;
+      padding: 16px 48px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+    /* ---------- Section ---------- */
+    section { padding: 80px 20px; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 16px; color: #1b5e20; }
+    .section-sub { text-align: center; font-size: 1rem; color: #666; margin-bottom: 48px; }
+
+    /* ---------- Pain Points ---------- */
+    .pain { background: #fafafa; }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .pain-card {
+      background: #fff;
+      border-left: 4px solid #e53935;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    }
+    .pain-card h3 { color: #e53935; margin-bottom: 8px; }
+
+    /* ---------- Solution ---------- */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .solution-card {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 12px;
+      background: #e8f5e9;
+    }
+    .solution-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .solution-card h3 { color: #1b5e20; margin-bottom: 8px; }
+    .solution-card p { font-size: .95rem; color: #555; }
+
+    /* ---------- Timeline ---------- */
+    .timeline { background: #f5f8f5; }
+    .timeline-container {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline-container::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #66bb6a;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+      padding: 20px 24px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 28px;
+      width: 14px;
+      height: 14px;
+      background: #1b5e20;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+    .timeline-item .month { font-weight: bold; color: #1b5e20; margin-bottom: 4px; }
+
+    /* ---------- CTA Bottom ---------- */
+    .cta-section {
+      background: #1b5e20;
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .cta-section h2 { font-size: 1.6rem; margin-bottom: 24px; }
+
+    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <h1>「やることが多すぎて、何から始めれば…」<br>そのお悩み、すべて解決します。</h1>
+  <p class="subtitle">物件探し・資金調達・届出・内装・採用——薬局開業に必要なすべてを、ワンストップでサポート。あなたは"薬局のビジョン"だけ考えてください。</p>
+  <a href="#contact" class="cta-btn">まとめて相談する（無料）</a>
+</section>
+
+<!-- ===== Pain Points ===== -->
+<section class="pain">
+  <h2 class="section-title">こんなお悩みありませんか？</h2>
+  <p class="section-sub">開業準備の複雑さに、多くの薬剤師が立ち止まっています。</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <h3>何から手をつけていいかわからない</h3>
+      <p>開業に必要な手続きは30以上。全体像が見えず不安になるのは当然です。</p>
+    </div>
+    <div class="pain-card">
+      <h3>業者との調整が煩雑すぎる</h3>
+      <p>不動産・内装・設備・システム……別々の業者とのやり取りに追われる日々。</p>
+    </div>
+    <div class="pain-card">
+      <h3>本業と並行して準備する時間がない</h3>
+      <p>今の仕事を続けながらの開業準備。休日返上でも終わらないタスクの山。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Solution ===== -->
+<section>
+  <h2 class="section-title">ワンストップだから、全部まとめてお任せ</h2>
+  <p class="section-sub">6つの専門領域を1つの窓口で。あなたの負担を最小限に。</p>
+  <div class="solution-grid">
+    <div class="solution-card">
+      <div class="icon">&#x1F4CD;</div>
+      <h3>立地選定</h3>
+      <p>商圏データに基づく最適な立地をご提案。</p>
+    </div>
+    <div class="solution-card">
+      <div class="icon">&#x1F4B0;</div>
+      <h3>資金計画</h3>
+      <p>融資交渉から補助金活用まで資金面をフルサポート。</p>
+    </div>
+    <div class="solution-card">
+      <div class="icon">&#x1F3D7;</div>
+      <h3>内装・設備</h3>
+      <p>薬局専門のデザインチームが最適な空間を設計。</p>
+    </div>
+    <div class="solution-card">
+      <div class="icon">&#x1F4CB;</div>
+      <h3>届出・許認可</h3>
+      <p>開局届から保険薬局指定まで、書類作成を代行。</p>
+    </div>
+    <div class="solution-card">
+      <div class="icon">&#x1F465;</div>
+      <h3>採用支援</h3>
+      <p>薬剤師・事務スタッフの採用をワンストップで支援。</p>
+    </div>
+    <div class="solution-card">
+      <div class="icon">&#x1F4C8;</div>
+      <h3>開業後経営</h3>
+      <p>開業後も月次レビューで安定経営をサポート。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Timeline ===== -->
+<section class="timeline">
+  <h2 class="section-title">開業までのスケジュール</h2>
+  <p class="section-sub">最短6ヶ月で開局可能。すべてのステップを伴走します。</p>
+  <div class="timeline-container">
+    <div class="timeline-item"><div class="month">Month 1</div>無料相談・ビジョンヒアリング・市場調査</div>
+    <div class="timeline-item"><div class="month">Month 2</div>立地選定・物件契約・事業計画策定</div>
+    <div class="timeline-item"><div class="month">Month 3-4</div>内装設計・施工・設備発注</div>
+    <div class="timeline-item"><div class="month">Month 5</div>届出申請・スタッフ採用・研修</div>
+    <div class="timeline-item"><div class="month">Month 6</div>グランドオープン</div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <h2>複雑な開業準備、まるごとお任せください。<br>まずは無料相談で全体像をお見せします。</h2>
+  <a href="#" class="cta-btn">無料相談に申し込む</a>
+</section>
+
+<footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
+
+</body>
+</html>
