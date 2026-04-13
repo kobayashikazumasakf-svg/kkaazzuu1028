@@ -1,171 +1,612 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>調剤薬局開業支援 | 信頼と実績で選ばれるパートナー</title>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; color: #333; line-height: 1.8; }
-    img { max-width: 100%; height: auto; }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px 80px;
-    }
-    .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
-    .hero p { font-size: 1.15rem; max-width: 640px; margin: 0 auto 32px; opacity: .9; }
-    .hero .cta {
-      display: inline-block;
-      background: #ff6f00;
-      color: #fff;
-      padding: 16px 48px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
-
-    /* ---------- Section Common ---------- */
-    section { padding: 80px 20px; }
-    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 48px; color: #0d47a1; }
-
-    /* ---------- Numbers ---------- */
-    .numbers {
-      background: #f5f8fc;
-    }
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .numbers-grid .num { font-size: 3rem; font-weight: bold; color: #0d47a1; }
-    .numbers-grid .label { font-size: .95rem; color: #555; }
-
-    /* ---------- Testimonials ---------- */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .testimonial-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    }
-    .testimonial-card .name { font-weight: bold; margin-bottom: 8px; color: #0d47a1; }
-    .testimonial-card .quote { font-size: .95rem; color: #555; }
-
-    /* ---------- Flow ---------- */
-    .flow-list {
-      max-width: 700px;
-      margin: 0 auto;
-      list-style: none;
-      counter-reset: flow;
-    }
-    .flow-list li {
-      counter-increment: flow;
-      position: relative;
-      padding: 24px 24px 24px 72px;
-      margin-bottom: 16px;
-      background: #fff;
-      border-radius: 8px;
-      border: 1px solid #e0e0e0;
-    }
-    .flow-list li::before {
-      content: counter(flow);
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 36px;
-      height: 36px;
-      background: #0d47a1;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    /* ---------- CTA Bottom ---------- */
-    .cta-section {
-      background: #0d47a1;
-      color: #fff;
-      text-align: center;
-      padding: 64px 20px;
-    }
-    .cta-section h2 { font-size: 1.6rem; margin-bottom: 24px; }
-    .cta-section .cta {
-      display: inline-block;
-      background: #ff6f00;
-      color: #fff;
-      padding: 16px 48px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* ---------- Footer ---------- */
-    footer { text-align: center; padding: 32px 20px; font-size: .85rem; color: #999; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>調剤薬局開業支援 | 信頼と実績で選ばれるパートナー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0d2b5e;
+  --blue: #1a4da0;
+  --accent: #c8922a;
+  --light: #f4f7fc;
+  --white: #fff;
+  --text: #2c2c2c;
+  --muted: #666;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text);
+  line-height: 1.8;
+  background: #fff;
+}
+img { max-width: 100%; height: auto; }
+ 
+/* ========== Hero ========== */
+.hero {
+  background: linear-gradient(150deg, #0a1f4e 0%, #1a4da0 55%, #2b6fc4 100%);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px 90px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: rgba(255,255,255,.9);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  padding: 5px 18px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.hero h1 span { color: #f5cc6a; }
+.hero p { font-size: 1.05rem; max-width: 580px; margin: 0 auto 36px; opacity: .9; }
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 18px 52px;
+  border-radius: 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: background .2s, transform .2s;
+  box-shadow: 0 4px 20px rgba(200,146,42,.4);
+}
+.cta-btn:hover { background: #b07d20; transform: translateY(-2px); }
+ 
+/* ========== Section Common ========== */
+section { padding: 88px 20px; }
+.section-label {
+  text-align: center;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.section-title {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 56px;
+}
+.section-title span { color: var(--accent); }
+ 
+/* ========== President ========== */
+.president-section {
+  background: var(--light);
+  padding: 88px 20px;
+}
+.president-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.president-photo {
+  position: relative;
+}
+.president-photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #d0dff5 0%, #b8cff0 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(13,43,94,.15);
+}
+/* 実際の写真をここに置く場合: <img src="president.jpg" ... /> */
+.president-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.president-photo-placeholder {
+  text-align: center;
+  color: #8aa6d4;
+}
+.president-photo-placeholder .icon {
+  font-size: 5rem;
+  margin-bottom: 8px;
+}
+.president-photo-placeholder p {
+  font-size: .8rem;
+}
+.president-accent {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  border-radius: 4px;
+  z-index: -1;
+}
+.president-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 2px;
+  letter-spacing: .1em;
+  margin-bottom: 14px;
+}
+.president-name {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.president-name-en {
+  font-size: .85rem;
+  color: var(--muted);
+  letter-spacing: .12em;
+  margin-bottom: 24px;
+}
+.president-message {
+  font-size: .97rem;
+  color: var(--text);
+  line-height: 2;
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 28px;
+}
+.president-career {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.president-career li {
+  list-style: none;
+  padding: 4px 0;
+  border-bottom: 1px solid #e0e8f5;
+}
+.president-career li::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+ 
+/* ========== Numbers ========== */
+.numbers { background: var(--navy); }
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.numbers .section-title { color: #fff; margin-bottom: 48px; }
+.numbers .section-label { color: #f5cc6a; }
+.num-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 40px 20px;
+  border-radius: 4px;
+}
+.num-val {
+  font-family: "Noto Serif JP", serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #f5cc6a;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.num-label { font-size: .88rem; color: rgba(255,255,255,.75); }
+ 
+/* ========== 譲渡案件 ========== */
+.transfer-section { background: #fff; }
+.transfer-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: -32px auto 48px;
+  color: var(--muted);
+  font-size: .97rem;
+}
+.transfer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  max-width: 1020px;
+  margin: 0 auto 56px;
+}
+.transfer-card {
+  border: 1px solid #d8e4f5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(13,43,94,.07);
+  transition: transform .25s, box-shadow .25s;
+}
+.transfer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(13,43,94,.13);
+}
+.transfer-card-head {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: #fff;
+  padding: 20px 24px 16px;
+}
+.transfer-card-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  letter-spacing: .08em;
+}
+.transfer-card-name {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.transfer-card-body {
+  padding: 24px;
+  background: #fff;
+}
+.transfer-info-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.transfer-info-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e0eaf5;
+  font-size: .88rem;
+}
+.transfer-info-list li:last-child { border-bottom: none; }
+.transfer-info-list .key {
+  color: var(--muted);
+  font-size: .82rem;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+.transfer-info-list .val {
+  font-weight: 700;
+  color: var(--navy);
+  text-align: right;
+}
+.transfer-info-list .val.highlight { color: var(--accent); }
+.transfer-cta {
+  display: block;
+  text-align: center;
+  background: var(--navy);
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: background .2s;
+}
+.transfer-cta:hover { background: var(--blue); }
+ 
+.transfer-note {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.transfer-note p {
+  font-size: 1.05rem;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.transfer-note .cta-btn { display: inline-block; }
+ 
+/* ========== Testimonials ========== */
+.testimonials { background: var(--light); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(13,43,94,.06);
+  border-top: 3px solid var(--accent);
+}
+.testimonial-card .name {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-size: .9rem;
+}
+.testimonial-card .quote { font-size: .92rem; color: #555; line-height: 1.9; }
+.testimonial-card .quote::before {
+  content: "「";
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-family: "Noto Serif JP", serif;
+}
+.testimonial-card .quote::after {
+  content: "」";
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-family: "Noto Serif JP", serif;
+}
+ 
+/* ========== Flow ========== */
+.flow-section { background: #fff; }
+.flow-list {
+  max-width: 680px;
+  margin: 0 auto;
+  list-style: none;
+  counter-reset: flow;
+}
+.flow-list li {
+  counter-increment: flow;
+  position: relative;
+  padding: 22px 24px 22px 72px;
+  margin-bottom: 12px;
+  background: var(--light);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+.flow-list li::before {
+  content: counter(flow);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .9rem;
+}
+ 
+/* ========== CTA Bottom ========== */
+.cta-section {
+  background: linear-gradient(135deg, #0a1f4e 0%, #1a4da0 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.cta-section h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin-bottom: 12px;
+}
+.cta-section p {
+  font-size: .95rem;
+  opacity: .8;
+  margin-bottom: 36px;
+}
+ 
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: .82rem;
+  color: #999;
+  border-top: 1px solid #eee;
+}
+ 
+/* ========== Responsive ========== */
+@media (max-width: 700px) {
+  .president-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .president-photo-frame { aspect-ratio: 1/1; max-width: 240px; margin: 0 auto; }
+}
+</style>
 </head>
 <body>
-
+ 
 <!-- ===== Hero ===== -->
 <section class="hero">
-  <h1>薬局開業実績30件超。<br>薬局開業は、信頼のプロに任せる。</h1>
-  <p>10年以上の支援実績と専門チームが、あなたの薬局開業を成功へ導きます。初めての開業でも安心のサポート体制。</p>
-  <a href="#contact" class="cta">無料相談を予約する</a>
+  <div class="hero-inner">
+    <div class="hero-badge">調剤薬局 開業・譲渡支援</div>
+    <h1>薬局開業実績<span>30件超</span>。<br>信頼のプロに、任せる。</h1>
+    <p>10年以上の支援実績と専門チームが、あなたの薬局開業・承継を成功へ導きます。</p>
+    <a href="#contact" class="cta-btn">無料相談を予約する →</a>
+  </div>
 </section>
-
+ 
+<!-- ===== 代表メッセージ（社長顔写真） ===== -->
+<section class="president-section">
+  <div class="section-label">代表メッセージ</div>
+  <h2 class="section-title">薬局業界に、<span>本当の支援</span>を。</h2>
+  <div class="president-inner">
+    <div class="president-photo">
+      <div class="president-photo-frame">
+        <!--
+          ★ ここに社長の顔写真を入れてください ★
+          例: <img src="president.jpg" alt="小林和正社長" />
+        -->
+        <div class="president-photo-placeholder">
+          <div class="icon">👤</div>
+          <p>小林和正社長<br>お写真をここに</p>
+        </div>
+      </div>
+      <div class="president-accent"></div>
+    </div>
+    <div class="president-text">
+      <div class="president-tag">代表取締役</div>
+      <div class="president-name">小林 和正</div>
+      <div class="president-name-en">Kazumasa Kobayashi</div>
+      <p class="president-message">
+        薬局開業は、一生に一度の大きな決断です。私自身、長年この業界に携わる中で、情報不足や支援の不足によって夢を諦めた薬剤師を何人も見てきました。だからこそ、私は「本当に必要な支援」を徹底的に追求します。開業後も、経営の壁を一緒に乗り越えましょう。
+      </p>
+      <ul class="president-career">
+        <li>調剤薬局業界歴 15年以上</li>
+        <li>開業支援実績 30件超</li>
+        <li>M&amp;A・譲渡案件 多数手がける</li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
 <!-- ===== 実績数字 ===== -->
 <section class="numbers">
-  <h2 class="section-title">選ばれ続ける理由</h2>
+  <div class="section-label">実績</div>
+  <h2 class="section-title" style="color:#fff;">選ばれ続ける理由</h2>
   <div class="numbers-grid">
-    <div><div class="num">30件以上</div><div class="label">開業支援実績</div></div>
-    <div><div class="num">98%</div><div class="label">顧客満足度</div></div>
-    <div><div class="num">15年</div><div class="label">業界経験</div></div>
-    <div><div class="num">50名</div><div class="label">専門スタッフ</div></div>
+    <div class="num-card">
+      <div class="num-val">30件+</div>
+      <div class="num-label">開業支援実績</div>
+    </div>
+    <div class="num-card">
+      <div class="num-val">98%</div>
+      <div class="num-label">顧客満足度</div>
+    </div>
+    <div class="num-card">
+      <div class="num-val">15年</div>
+      <div class="num-label">業界経験</div>
+    </div>
+    <div class="num-card">
+      <div class="num-val">50名</div>
+      <div class="num-label">専門スタッフ</div>
+    </div>
   </div>
 </section>
-
+ 
+<!-- ===== 譲渡案件 ===== -->
+<section class="transfer-section">
+  <div class="section-label">M&amp;A / 承継</div>
+  <h2 class="section-title">現在の<span>譲渡案件</span>のご紹介</h2>
+  <p class="transfer-intro">
+    調剤薬局の承継・M&Aをお考えの方へ。現在ご紹介可能な案件を掲載しています。詳細は非公開情報となりますので、気になる案件はお気軽にご相談ください。
+  </p>
+ 
+  <div class="transfer-grid">
+ 
+    <!-- 案件 1 -->
+    <div class="transfer-card">
+      <div class="transfer-card-head">
+        <div class="transfer-card-badge">案件 No.1</div>
+        <div class="transfer-card-name">東京都内 門前調剤薬局<br>（内科・整形外科クリニック隣接）</div>
+      </div>
+      <div class="transfer-card-body">
+        <ul class="transfer-info-list">
+          <li><span class="key">所在地</span><span class="val">東京都（詳細は相談後）</span></li>
+          <li><span class="key">月商</span><span class="val highlight">約 800 万円</span></li>
+          <li><span class="key">処方箋枚数</span><span class="val">約 600 枚 / 月</span></li>
+          <li><span class="key">スタッフ</span><span class="val">薬剤師 2名 ・ 事務 1名</span></li>
+          <li><span class="key">譲渡理由</span><span class="val">オーナー高齢・後継者不在</span></li>
+          <li><span class="key">譲渡価格</span><span class="val highlight">要相談</span></li>
+        </ul>
+        <a href="#contact" class="transfer-cta">この案件を相談する →</a>
+      </div>
+    </div>
+ 
+    <!-- 案件 2 -->
+    <div class="transfer-card">
+      <div class="transfer-card-head">
+        <div class="transfer-card-badge">案件 No.2</div>
+        <div class="transfer-card-name">神奈川県 住宅街立地<br>在宅・かかりつけ型薬局</div>
+      </div>
+      <div class="transfer-card-body">
+        <ul class="transfer-info-list">
+          <li><span class="key">所在地</span><span class="val">神奈川県（詳細は相談後）</span></li>
+          <li><span class="key">月商</span><span class="val highlight">約 500 万円</span></li>
+          <li><span class="key">処方箋枚数</span><span class="val">約 400 枚 / 月</span></li>
+          <li><span class="key">スタッフ</span><span class="val">薬剤師 1名 ・ 事務 1名</span></li>
+          <li><span class="key">譲渡理由</span><span class="val">経営者の健康上の理由</span></li>
+          <li><span class="key">譲渡価格</span><span class="val highlight">要相談</span></li>
+        </ul>
+        <a href="#contact" class="transfer-cta">この案件を相談する →</a>
+      </div>
+    </div>
+ 
+    <!-- 案件 3 -->
+    <div class="transfer-card">
+      <div class="transfer-card-head">
+        <div class="transfer-card-badge">案件 No.3</div>
+        <div class="transfer-card-name">埼玉県 複数クリニック応需<br>多科目応需・地域密着型薬局</div>
+      </div>
+      <div class="transfer-card-body">
+        <ul class="transfer-info-list">
+          <li><span class="key">所在地</span><span class="val">埼玉県（詳細は相談後）</span></li>
+          <li><span class="key">月商</span><span class="val highlight">約 1,200 万円</span></li>
+          <li><span class="key">処方箋枚数</span><span class="val">約 900 枚 / 月</span></li>
+          <li><span class="key">スタッフ</span><span class="val">薬剤師 3名 ・ 事務 2名</span></li>
+          <li><span class="key">譲渡理由</span><span class="val">事業整理・選択と集中</span></li>
+          <li><span class="key">譲渡価格</span><span class="val highlight">要相談</span></li>
+        </ul>
+        <a href="#contact" class="transfer-cta">この案件を相談する →</a>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <div class="transfer-note">
+    <p>🔔 気になる案件がございましたら、お気軽にご相談ください。<br>非公開案件も多数ございます。</p>
+    <a href="#contact" class="cta-btn">無料で案件を問い合わせる →</a>
+  </div>
+</section>
+ 
 <!-- ===== お客様の声 ===== -->
 <section class="testimonials">
-  <h2 class="section-title">開業された先生方の声</h2>
+  <div class="section-label">Voice</div>
+  <h2 class="section-title">開業された先生方の<span>声</span></h2>
   <div class="testimonials-grid">
     <div class="testimonial-card">
-      <p class="name">東京都江東区A薬局 中村先生（東京都）</p>
-      <p class="quote">「右も左もわからない状態でしたが、物件選びから開局届の提出まで、すべてを丁寧にサポートしていただきました。今では月商800万円を安定して達成しています。」</p>
+      <p class="name">東京都江東区 A薬局 中村先生</p>
+      <p class="quote">右も左もわからない状態でしたが、物件選びから開局届の提出まで、すべてを丁寧にサポートしていただきました。今では月商800万円を安定して達成しています。</p>
     </div>
     <div class="testimonial-card">
-      <p class="name">茨城県B薬局 関山先生（茨城県）</p>
-      <p class="quote">「他社と比較して、圧倒的に提案の質が高かった。立地分析のデータに基づいたアドバイスのおかげで、開業初月から黒字化できました。」</p>
+      <p class="name">茨城県 B薬局 関山先生</p>
+      <p class="quote">他社と比較して、圧倒的に提案の質が高かった。立地分析のデータに基づいたアドバイスのおかげで、開業初月から黒字化できました。</p>
     </div>
     <div class="testimonial-card">
-      <p class="name">C薬局 田中先生（福岡県）</p>
-      <p class="quote">「開業後のフォローが手厚く、経営面での相談にも乗ってくれます。一人で悩まなくていいという安心感は何物にも代えがたいです。」</p>
+      <p class="name">福岡県 C薬局 田中先生</p>
+      <p class="quote">開業後のフォローが手厚く、経営面での相談にも乗ってくれます。一人で悩まなくていいという安心感は何物にも代えがたいです。</p>
     </div>
   </div>
 </section>
-
+ 
 <!-- ===== ご支援の流れ ===== -->
-<section style="background: #f5f8fc;">
-  <h2 class="section-title">ご支援の流れ</h2>
+<section class="flow-section">
+  <div class="section-label">Flow</div>
+  <h2 class="section-title">ご支援の<span>流れ</span></h2>
   <ol class="flow-list">
     <li>無料相談・ヒアリング</li>
     <li>市場調査・立地分析</li>
@@ -176,14 +617,16 @@
     <li>グランドオープン・運営フォロー</li>
   </ol>
 </section>
-
+ 
 <!-- ===== CTA ===== -->
 <section class="cta-section" id="contact">
   <h2>まずは無料相談から。<br>あなたの理想の薬局づくりを一緒に始めましょう。</h2>
-  <a href="#" class="cta">無料相談に申し込む</a>
+  <p>お電話・メール・LINEでもお気軽にどうぞ。秘密厳守でご対応します。</p>
+  <a href="#" class="cta-btn">無料相談に申し込む →</a>
 </section>
-
+ 
 <footer>&copy; 2026 薬局開業支援サービス All Rights Reserved.</footer>
-
+ 
 </body>
 </html>
+ 
